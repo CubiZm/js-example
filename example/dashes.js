@@ -1,24 +1,19 @@
-//Допустим мы знаем число
+var dashes = function dashes(num) {
 
-var number = 2212062344; // 2-212-0-6-234-4
-// Преобразуем их в строку (чтобы вставлять "-" потом)
-// var string = number.toString();
-
-function dashes() {
-
-	var string = number.toString();
+	var str = num.toString();
 	//Пихнем в массив
-	var arrString = string.split("");
-	// через определенную "букву" добавляем "-" в цикле
-	for (i = 0; i < arrString.length; i++) {
-		if (i % 2) {
-			return arrString[i] + "-";
-		};
-		// return arrString += "-";
+	var arr = str.split('');
+	
+	var result = '';
+
+	for (var i = 0; i < arr.length; i++) {
+		result = result + arr[i];
+
+		if (arr[i] % 2 === 0 && arr[i + 1] % 2 === 0) {
+			result = result + "-"
+		}
 	}
-
-	// return arrString;
-
+		return result;
 }
 
 dashes();
